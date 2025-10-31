@@ -1,0 +1,406 @@
+/* =========================================================
+   GLOBAL RESET & BASE STYLES
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fb;
+  color: #222;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* =========================================================
+   LAYOUT STRUCTURE
+========================================================= */
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* =========================================================
+   PROFILE HEADER
+========================================================= */
+.profile-wrapper {
+  max-width: 1170px;
+  margin: 0 auto 1.5rem auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+}
+
+.profile-left {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.profile-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 0%;
+  object-fit: cover;
+  border: 0px solid #e5e7eb;
+}
+
+.profile-info h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.profile-info .location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+
+.profile-info .location img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: transform 0.2s ease;
+}
+
+.profile-info .location:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.profile-info .role {
+  color: #333;
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+
+/* PROFILE RIGHT ICONS */
+.profile-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-right .icon {
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.profile-right .icon svg {
+  width: 22px;
+  height: 22px;
+  fill: #333;
+}
+
+.profile-right .icon:hover {
+  background-color: #000;
+}
+
+.profile-right .icon:hover svg {
+  fill: #fff;
+}
+
+/* =========================================================
+   CARD STYLES (APPLIED TO ALL SECTIONS)
+========================================================= */
+.card {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* =========================================================
+   TECH STACK SECTION
+========================================================= */
+.tech-stack h4 {
+  margin: 1rem 0 0.5rem;
+  color: #333;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #eef2f6;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.tags span img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.tags span:hover {
+  background-color: #d9e4f1;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   EXPERIENCE SECTION
+========================================================= */
+.experience .exp-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+  gap: 1rem;
+}
+
+.exp-info {
+  flex: 1;
+}
+
+.exp-info b {
+  display: block;
+  margin-bottom: 0.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.exp-info p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.exp-date {
+  font-size: 0.9rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   EDUCATION SECTION
+========================================================= */
+.education .edu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.edu-info {
+  flex: 1;
+}
+
+.edu-info b {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.edu-info p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.edu-date {
+  font-size: 0.9rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SOCIAL LINKS SECTION
+========================================================= */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.social-links h2 {
+  margin-bottom: 0;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: #111;
+  border: 1px solid #e6e8eb;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.social-item:hover {
+  background-color: #f2f4f8;
+  transform: translateY(-1px);
+}
+
+.social-item img {
+  width: 22px;
+  height: 22px;
+  filter: invert(0.3);
+}
+
+.social-item span {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+  text-align: center;
+  padding: 5px 0;
+  color: #777;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+/* Medium devices (≤900px) */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .profile-right {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .profile-right .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .profile-right .icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Small devices (≤700px) */
+@media (max-width: 700px) {
+  .experience .exp-item,
+  .education .edu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exp-date,
+  .edu-date {
+    margin-top: 0.3rem;
+  }
+}
+
+/* Extra small devices (≤500px) */
+@media (max-width: 500px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .profile-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .profile-info .location {
+    font-size: 0.85rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+}
